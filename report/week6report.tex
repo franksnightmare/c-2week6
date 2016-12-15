@@ -1,0 +1,83 @@
+\documentclass[11pt]{article}
+
+\usepackage{times}
+\usepackage[english]{babel}
+
+% -----------------------------------------------
+% especially use this for you code
+% -----------------------------------------------
+
+\usepackage{courier}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{tabularx}
+\usepackage{graphicx}
+
+\definecolor{Gray}{gray}{0.95}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{language=C++,
+	basicstyle = \normalsize\ttfamily,   % the size and fonts that are used
+	tabsize = 2,                    % sets default tabsize
+	breaklines = true,              % sets automatic line breaking
+	keywordstyle=\color{blue}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	commentstyle=\color{mygreen}\ttfamily,
+	numbers=left,
+	keepspaces=true,
+	showspaces=false,
+	showstringspaces=false,
+}
+
+\begin{document}
+
+\title{Programming in C/C++ \\
+       Exercises set six: multi-threading 1
+}
+\date{\today}
+\author{Christiaan Steenkist \\
+Jaime Betancor Valado \\
+Remco Bos \\
+}
+
+\maketitle
+\section*{Exercise 38, basic multithreading with recursive program}
+We were tasked to design a program that recursively visits all elements of a starting directory and computes the total size of its regular files.
+
+\subsection*{Code listings}
+\lstinputlisting[caption = main.ih]{src/a38/main.ih}
+\lstinputlisting[caption = main.cc]{src/a38/main.cc}
+\lstinputlisting[caption = openfolder.cc]{src/a38/openfolder.cc}
+\lstinputlisting[caption = timeprocess.cc]{src/a38/timeprocess.cc}
+
+\section*{Exercise 39, using chrono/clock facilities }
+We were tasked to display the time at the beginning and end of a program.
+
+\subsection*{Code listings}
+\lstinputlisting[caption = main.cc]{src/a39/main.cc}
+
+\section*{Exercise 42, establish connection between a parent and child process}
+We were tasked to pass output from a child process to the parent process by using fork and exec.
+
+\subsection*{Code listings}
+\lstinputlisting[caption = main.cc]{src/a42/main.cc}
+\lstinputlisting[caption = main.h]{src/a42/main.h}
+\lstinputlisting[caption = usechildoutput.cc]{src/a42/usechildoutput.cc}
+
+\section*{Exercise 43: design a simple multi-thread program}
+We were tasked to make a program with threads counting vowels, hexadecimals, digits and punctuation character in a file passed to the program.
+
+\subsection*{Code listings}
+\lstinputlisting[caption = task.h]{src/a43/task.h}
+\lstinputlisting[caption = task.ih]{src/a43/task.ih}
+\lstinputlisting[caption = main.cc]{src/a43/main.cc}
+\lstinputlisting[caption = task.cc]{src/a43/task.cc}
+\lstinputlisting[caption = countdigit.cc]{src/a43/countdigit.cc}
+\lstinputlisting[caption = counthexdec.cc]{src/a43/counthexdec.cc}
+\lstinputlisting[caption = countpunctchar.cc]{src/a43/countpunctchar.cc}
+\lstinputlisting[caption = countvowelcc]{src/a43/countvowel.cc}
+
+\end{document}
