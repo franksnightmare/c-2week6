@@ -56,8 +56,28 @@ We were tasked to design a program that recursively visits all elements of a sta
 \section*{Exercise 39, using chrono/clock facilities }
 We were tasked to display the time at the beginning and end of a program.
 
+\subsection*{Output}
+\lstinputlisting[caption = output]{src/a39/output.txt}
+
 \subsection*{Code listings}
 \lstinputlisting[caption = main.cc]{src/a39/main.cc}
+
+\section*{Exercise 40, thread-safe queue}
+A proxy and a lot of lock guards attempt to make this queue thread-safe.
+
+\subsection*{Code listings}
+\lstinputlisting[caption = safequeue.ih]{src/a40/main.ih}
+\lstinputlisting[caption = safequeue.h]{src/a40/safequeue.h}
+\lstinputlisting[caption = back.cc]{src/a40/back.cc}
+\lstinputlisting[caption = empty.cc]{src/a40/empty.cc}
+\lstinputlisting[caption = front.cc]{src/a40/front.cc}
+\lstinputlisting[caption = \texttt{opeartor\=1.cc}]{src/a40/operator=1.cc}
+\lstinputlisting[caption = \texttt{operator\=2.cc}]{src/a40/operator=2.cc}
+\lstinputlisting[caption = pop.cc]{src/a40/pop.cc}
+\lstinputlisting[caption = promotor.cc]{src/a40/promotion.cc}
+\lstinputlisting[caption = proxyconstr.cc]{src/a40/proxyconstr.cc}
+\lstinputlisting[caption = push.cc]{src/a40/push.cc}
+\lstinputlisting[caption = queueconstr.cc]{src/a40/queueconstr.cc}
 
 \section*{Exercise 42, establish connection between a parent and child process}
 We were tasked to pass output from a child process to the parent process by using fork and exec.

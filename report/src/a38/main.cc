@@ -11,8 +11,11 @@ int main(int argc, char **argv)
 	mutex statusMutex;
 	bool completed = false;
 	size_t bytes = 0;
-	thread byteCounter(countBytes, std::ref(statusMutex), std::ref(completed), std::ref(bytes), argv[1]);
-	thread progressBar(timeProcess, std::ref(statusMutex), std::ref(completed));
+	thread byteCounter(countBytes,
+		std::ref(statusMutex), std::ref(completed),
+		std::ref(bytes), argv[1]);
+	thread progressBar(timeProcess,
+		std::ref(statusMutex), std::ref(completed));
 	
 	byteCounter.join();
 	progressBar.join();
