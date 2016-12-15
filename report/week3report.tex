@@ -1,0 +1,132 @@
+\documentclass[11pt]{article}
+
+\usepackage{times}
+\usepackage[english]{babel}
+
+% -----------------------------------------------
+% especially use this for you code
+% -----------------------------------------------
+
+\usepackage{courier}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{tabularx}
+\usepackage{graphicx}
+
+\definecolor{Gray}{gray}{0.95}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{language=C++,
+	basicstyle = \normalsize\ttfamily,   % the size and fonts that are used
+	tabsize = 2,                    % sets default tabsize
+	breaklines = true,              % sets automatic line breaking
+	keywordstyle=\color{blue}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	commentstyle=\color{mygreen}\ttfamily,
+	numbers=left,
+	keepspaces=true,
+	showspaces=false,
+	showstringspaces=false,
+}
+
+\begin{document}
+
+\title{Programming in C/C++ \\
+       Exercises set three: polymorphism
+}
+\date{\today}
+\author{Christiaan Steenkist \\
+Jaime Betancor Valado \\
+Remco Bos \\
+}
+
+\maketitle
+\section*{Exercise 15, construct ostream class}
+We were tasked to construct an ofstream class with our own buffer. The program should work correctly with the syntaxis in the question.
+
+\subsection*{Code listings}
+\lstinputlisting[caption = main.ih]{src/a15/main.ih}
+\lstinputlisting[caption = main.cc]{src/a15/main.cc}
+\lstinputlisting[caption = bistream.h]{src/a15/bistream.h}
+\lstinputlisting[caption = bistreambuffer.h]{src/a15/bistreambuffer.h}
+\lstinputlisting[caption = bufferconstructor.cc]{src/a15/bufferconstructor.cc}
+\lstinputlisting[caption = streamconstructor.cc]{src/a15/streamconstructor.cc}
+\lstinputlisting[caption = streamdestructor.cc]{src/a15/streamdestructor.cc}
+\lstinputlisting[caption = xsputn.cc]{src/a15/xsputn.cc}
+
+\section*{Exercise 16, design streambuf}
+We were tasked to design a streambuf class that is called IFdStreamBuff that allows extractions from a FD.
+
+\subsection*{Code listings}
+\lstinputlisting[caption = ifdstreambuf.ih]{src/a16/ifdstreambuf.ih}
+\lstinputlisting[caption = mode.h]{src/a18/mode.h}
+\lstinputlisting[caption = ifdstream.h]{src/a16/ifdstream.h}
+\lstinputlisting[caption = ifdstreambuf.h]{src/a16/ifdstreambuf.h}
+\lstinputlisting[caption = close.cc]{src/a16/iclose.cc}
+\lstinputlisting[caption = cnstr1.cc]{src/a16/iconstr1.cc}
+\lstinputlisting[caption = cnstr2.cc]{src/a16/iconstr2.cc}
+\lstinputlisting[caption = destructor.cc]{src/a16/idestructor.cc}
+\lstinputlisting[caption = open.cc]{src/a16/iopen.cc}
+\lstinputlisting[caption = uflow.cc]{src/a16/iuflow.cc}
+\lstinputlisting[caption = undflow.cc]{src/a16/iunderflow.cc}
+\lstinputlisting[caption = xsgetn.cc]{src/a16/xsgetn.cc}
+
+\section*{Exercise 17, design streambuf 2}
+We were tasked to design the OFdStreamBuff that allows insertions to a FD.
+
+\subsection*{Code listings}
+\lstinputlisting[caption = ofdstreambuf.ih]{src/a18/ofdstreambuf.ih}
+\lstinputlisting[caption = ofdstream.h]{src/a18/ofdstream.h}
+\lstinputlisting[caption = ofdstreambuf.h]{src/a18/ofdstreambuf.h}
+\lstinputlisting[caption = close.cc]{src/a18/oclose.cc}
+\lstinputlisting[caption = cnstr1.cc]{src/a18/oconstr1.cc}
+\lstinputlisting[caption = cnstr2.cc]{src/a18/oconstr2.cc}
+\lstinputlisting[caption = destructor.cc]{src/a18/odestructor.cc}
+\lstinputlisting[caption = open.cc]{src/a18/oopen.cc}
+\lstinputlisting[caption = psync.cc]{src/a18/psync.cc}
+\lstinputlisting[caption = sync.cc]{src/a18/sync.cc}
+\lstinputlisting[caption = xsputn.cc]{src/a18/xsputn.cc}
+
+\section*{Exercise 18: FD streams}
+Here is the code for the streams of the corresponding FD buffers from exercises 16 and 17.
+The code in main echoes back whatever is typed into console.
+
+\subsection*{Code listings}
+\lstinputlisting[caption = main.h]{src/a18/main.h}
+\lstinputlisting[caption = main.cc]{src/a18/main.cc}
+
+\subsubsection*{\texttt{iFdStreambuf}}
+\lstinputlisting[caption = ifdstream.h]{src/a18/ifdstream.h}
+\lstinputlisting[caption = istreamconstr.cc]{src/a18/istreamconstr.cc}
+\lstinputlisting[caption = ostreamconstr.cc]{src/a18/istreamdestr.cc}
+
+\subsubsection*{\texttt{oFdStreambuf}}
+\lstinputlisting[caption = ofdstream.h]{src/a18/ofdstream.h}
+\lstinputlisting[caption = istreamdestr.cc]{src/a18/ostreamconstr.cc}
+\lstinputlisting[caption = ostreamdestr.cc]{src/a18/ostreamdestr.cc}
+
+\section*{Exercise 19: Forks}
+We were tasked with making an abstract \texttt{Fork}.
+Its derived classes are able to fork themselves by calling the member \texttt{fork()}.
+A tester class was made to check if the forking works.
+
+\subsection*{Sample output}
+\begin{lstlisting}
+Parent process 20571 here!
+BEEP
+Child process 0 here!
+BOOP
+\end{lstlisting}
+
+\subsection*{Code listings}
+\lstinputlisting[caption = main.cc]{src/a19/main.cc}
+\lstinputlisting[caption = fork.ih]{src/a19/fork/fork.ih}
+\lstinputlisting[caption = fork.h]{src/a19/fork/fork.h}
+\lstinputlisting[caption = childprocesstester.cc]{src/a19/fork/childprocesstester.cc}
+\lstinputlisting[caption = parentprocesstester.cc]{src/a19/fork/parentprocesstester.cc}
+\lstinputlisting[caption = pid.cc]{src/a19/fork/pid.cc}
+\lstinputlisting[caption = waitforchild.cc]{src/a19/fork/waitforchild.cc}
+\end{document}

@@ -1,0 +1,6 @@
+#include "task.h"
+#include <algorithm>
+#include <iterator>
+#include <cctype>
+
+using namespace std;
