@@ -69,7 +69,8 @@ We were tasked to display the time at the beginning and end of a program.
 \lstinputlisting[caption = timePassed.cc]{src/a39/timePassed.cc}
 
 \section*{Exercise 40, thread-safe queue}
-A proxy and a lot of lock guards attempt to make this queue thread-safe.
+A proxy a mutex and an actual semaphore this time make it way better than it was last time.
+Also look at this formatting, good stuff.
 
 \subsection*{Code listings}
 \lstinputlisting[caption = safequeue.ih]{src/a40/safequeue.ih}
@@ -78,8 +79,8 @@ A proxy and a lot of lock guards attempt to make this queue thread-safe.
 \subsubsection*{Semaphore}
 \lstinputlisting[caption = semaphore.ih]{src/a40/semaphore.ih}
 \lstinputlisting[caption = semaphore.h]{src/a40/semaphore.h}
-\lstinputlisting[caption = notify.cc]{src/a40/notify.cc}
 \lstinputlisting[caption = semaphoreconstr.cc]{src/a40/semaphoreconstr.cc}
+\lstinputlisting[caption = notify.cc]{src/a40/notify.cc}
 \lstinputlisting[caption = wait.cc]{src/a40/wait.cc}
 
 \subsubsection*{SafeQueue}
@@ -90,10 +91,10 @@ A proxy and a lot of lock guards attempt to make this queue thread-safe.
 \lstinputlisting[caption = push.cc]{src/a40/push.cc}
 
 \subsubsection*{SafeQueue::RefProxy}
-\lstinputlisting[caption = operator\texttt{=}.cc]{src/a40/operator=.cc}
-\lstinputlisting[caption = promotor.cc]{src/a40/promotion.cc}
 \lstinputlisting[caption = proxyconstr.cc]{src/a40/proxyconstr.cc}
 \lstinputlisting[caption = proxyconstr.cc]{src/a40/proxydestr.cc}
+\lstinputlisting[caption = operator\texttt{=}.cc]{src/a40/operator=.cc}
+\lstinputlisting[caption = promotor.cc]{src/a40/promotion.cc}
 
 \section*{Exercise 42, establish connection between a parent and child process}
 We were tasked to pass output from a child process to the parent process by using fork and exec.
@@ -101,7 +102,7 @@ We were tasked to pass output from a child process to the parent process by usin
 \subsection*{Code listings}
 \lstinputlisting[caption = main.cc]{src/a42/main.cc}
 \lstinputlisting[caption = main.h]{src/a42/main.h}
-\lstinputlisting[caption = usechildoutput.cc]{src/a42/usechildoutput.cc}
+\lstinputlisting[caption = processpipe.cc]{src/a42/parentprocess.cc}
 
 \section*{Exercise 43: design a simple multi-thread program}
 We were tasked to make a program with threads counting vowels, hexadecimals, digits and punctuation character in a file passed to the program.
@@ -111,6 +112,7 @@ We were tasked to make a program with threads counting vowels, hexadecimals, dig
 \lstinputlisting[caption = task.ih]{src/a43/task.ih}
 \lstinputlisting[caption = main.cc]{src/a43/main.cc}
 \lstinputlisting[caption = task.cc]{src/a43/task.cc}
+\lstinputlisting[caption = countchar.cc]{src/a43/countchar.cc}
 \lstinputlisting[caption = countdigit.cc]{src/a43/countdigit.cc}
 \lstinputlisting[caption = counthexdec.cc]{src/a43/counthexdec.cc}
 \lstinputlisting[caption = countpunctchar.cc]{src/a43/countpunctchar.cc}

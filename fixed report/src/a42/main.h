@@ -3,7 +3,8 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <sys/wait.h>
 
 using namespace std;
 
-void usechildoutput(int count, char buffer[]);
+void processPipe(std::size_t pipe);

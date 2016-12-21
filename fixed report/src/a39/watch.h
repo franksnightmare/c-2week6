@@ -7,7 +7,8 @@
 
 class watch
 {
-    std::chrono::time_point<std::chrono::system_clock> d_start, d_end;
+    std::chrono::time_point<std::chrono::system_clock>
+        d_start, d_end;
     public:
         void startPoint();
         void endPoint();
