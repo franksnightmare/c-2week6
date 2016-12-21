@@ -3,6 +3,6 @@
 
 #include "safequeue.h"
 
-void printer(SafeQueue &queue, std::mutex *queueLock);
+void printer(SafeQueue &queue);
 
 #endif

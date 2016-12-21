@@ -66,18 +66,28 @@ We were tasked to display the time at the beginning and end of a program.
 A proxy and a lot of lock guards attempt to make this queue thread-safe.
 
 \subsection*{Code listings}
-\lstinputlisting[caption = safequeue.ih]{src/a40/main.ih}
+\lstinputlisting[caption = safequeue.ih]{src/a40/safequeue.ih}
 \lstinputlisting[caption = safequeue.h]{src/a40/safequeue.h}
+
+\subsubsection*{Semaphore}
+\lstinputlisting[caption = semaphore.ih]{src/a40/semaphore.ih}
+\lstinputlisting[caption = semaphore.h]{src/a40/semaphore.h}
+\lstinputlisting[caption = notify.cc]{src/a40/notify.cc}
+\lstinputlisting[caption = semaphoreconstr.cc]{src/a40/semaphoreconstr.cc}
+\lstinputlisting[caption = wait.cc]{src/a40/wait.cc}
+
+\subsubsection*{SafeQueue}
 \lstinputlisting[caption = back.cc]{src/a40/back.cc}
 \lstinputlisting[caption = empty.cc]{src/a40/empty.cc}
 \lstinputlisting[caption = front.cc]{src/a40/front.cc}
-\lstinputlisting[caption = \texttt{opeartor\=1.cc}]{src/a40/operator=1.cc}
-\lstinputlisting[caption = \texttt{operator\=2.cc}]{src/a40/operator=2.cc}
 \lstinputlisting[caption = pop.cc]{src/a40/pop.cc}
+\lstinputlisting[caption = push.cc]{src/a40/push.cc}
+
+\subsubsection*{SafeQueue::RefProxy}
+\lstinputlisting[caption = operator\texttt{=}.cc]{src/a40/operator=.cc}
 \lstinputlisting[caption = promotor.cc]{src/a40/promotion.cc}
 \lstinputlisting[caption = proxyconstr.cc]{src/a40/proxyconstr.cc}
-\lstinputlisting[caption = push.cc]{src/a40/push.cc}
-\lstinputlisting[caption = queueconstr.cc]{src/a40/queueconstr.cc}
+\lstinputlisting[caption = proxyconstr.cc]{src/a40/proxydestr.cc}
 
 \section*{Exercise 42, establish connection between a parent and child process}
 We were tasked to pass output from a child process to the parent process by using fork and exec.

@@ -1,4 +1,4 @@
-#include "main.ih"
+#include "reader.ih"
 
 size_t openFolder(string path)
 {

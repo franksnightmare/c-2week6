@@ -1,7 +1,9 @@
 #include "safequeue.ih"
 
-void SafeQueue::push(string item)
+void SafeQueue::push(string const &item)
 {
-	lock_guard<mutex> lock(*d_mutex);
+	d_mutex.lock();
 	d_queue.push(item);
+	d_mutex.unlock();
+	d_semaphore.notify();
 }

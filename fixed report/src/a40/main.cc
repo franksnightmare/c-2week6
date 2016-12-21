@@ -2,18 +2,18 @@
 
 int main(int argc, char **argv)
 {
-	mutex queueLock;
+	SafeQueue sQueue;
 	
-	SafeQueue sQueue(&queueLock);
+	for (size_t id = 0; id != 32; ++id)
+		sQueue.push(std::to_string(id));
 	
-	sQueue.push("Test1");
-	sQueue.push("Test2");
-	sQueue.push("Test3");
-	sQueue.push("Test4");
-	sQueue.push("Test5");
-	sQueue.push("Test6");
+	thread worker1(printer, std::ref(sQueue));
 	
-	thread worker(printer, std::ref(sQueue), &queueLock);
+	for (size_t id = 32; id != 64; ++id)
+		sQueue.push(std::to_string(id));
 	
-	worker.join();
+	thread worker2(printer, std::ref(sQueue));
+	
+	worker1.join();
+	worker2.join();
 }
