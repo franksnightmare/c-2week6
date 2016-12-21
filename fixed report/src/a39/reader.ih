@@ -1,0 +1,10 @@
+#include "reader.h"
+
+#include <thread>
+#include <chrono>
+
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <dirent.h>
+
+using namespace std;

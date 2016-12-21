@@ -1,16 +1,10 @@
-#include "main.ih"
+#include "reader.ih"
 
-void timeProcess(mutex &statusMutex, bool &status)
+void timeProcess(bool &status)
 {
-	bool localStatus = false;
-	while (!localStatus)
+	while (!status)
 	{
 		cout << '.' << std::flush;
-		
-		statusMutex.lock();
-		localStatus = status;
-		statusMutex.unlock();
-		
 		this_thread::sleep_for(chrono::seconds(1));
 	}
 	
