@@ -1,8 +1,10 @@
 #include "safequeue.ih"
 
-RefProxy::RefProxy(mutex *mut, string &ref)
+SafeQueue::RefProxy::RefProxy(SafeQueue *queue,
+	string &ref)
 :
-	d_mutex(mut),
+	d_queue(queue),
 	d_string(ref)
 {
+	d_queue->mutex()->lock();
 }

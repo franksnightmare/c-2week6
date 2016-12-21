@@ -1,16 +1,14 @@
 #include "main.ih"
 
-void printer(SafeQueue &queue, mutex *queueLock)
+void printer(SafeQueue &queue)
 {
-	bool status = true;
-	while (status)
+	while (!queue.empty())
 	{
-		{
-			string word = queue.front();
-			queue.pop();
-			cout << word << '\n';
-			
-			status = !queue.empty();
-		}
+		string word = queue.front();
+		queue.pop();
+		cout << this_thread::get_id() << " printed " << word << '\n';
+		this_thread::yield();
 	}
+	
+	cout << this_thread::get_id() << " stopping...\n";
 }
