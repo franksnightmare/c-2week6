@@ -1,0 +1,9 @@
+#include "task.h"
+#include <algorithm>
+#include <iterator>
+#include <cctype>
+#include <cstring>
+
+using namespace std;
+
+bool countChar(string &characterType, char character);
