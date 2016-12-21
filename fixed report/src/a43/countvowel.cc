@@ -6,7 +6,7 @@ void Task::countVowel()
     int myCount = count_if(begin(), end(),
         [&] (char character)
         {
-            countChar(vowel, character);
+            return countChar(vowel, character);
         }
     );
     cout << "Vowels: " << myCount << "\n";

@@ -6,7 +6,7 @@ void Task::countPunctChar()
     int myCount = count_if(begin(), end(),
         [&] (char character)
         {
-            countChar(punctuation, character);
+            return countChar(punctuation, character);
         }
     );
     cout << "Punctuation characters: " << myCount << "\n";

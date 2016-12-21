@@ -2,13 +2,12 @@
 
 void Task::countHexDec()
 {
-    size_t ret = 0;
-    for_each(begin(), end(),
-        [&] (char c)
+    string hexadecimal = "hexadecimal";
+    int myCount = count_if(begin(), end(),
+        [&] (char character)
         {
-            if (isxdigit(c))
-                ++ret;
+            return countChar(hexadecimal, character);
         }
     );
-    cout << "Hexadecimals: " << ret << "\n";
+    cout << "Hexadecimals: " << myCount << "\n";
 }
