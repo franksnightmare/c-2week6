@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <unistd.h>
-#include <stdlib.h>
-#include <errno.h>
-#include <sys/wait.h>
 #include <iostream>
+#include <algorithm>
+#include <vector>
 
 using namespace std;
 
