@@ -4,4 +4,4 @@
 
  Program ends at Thu Dec 15 14:44:36 2016
 
-Total time passed 0.0112944
+Total time passed 0.0112944 s

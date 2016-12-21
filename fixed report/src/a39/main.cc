@@ -1,34 +1,34 @@
-#include "tester.h"
-#include <iostream>
-#include <chrono>
-#include <ctime>
+#include "main.ih"
 
 int main(int argc, char **argv)
 {
-	// Time block
-	chrono::time_point<chrono::system_clock> start,
-		end;
-	
-	start = chrono::system_clock::now();
-	
-	printFolderSize("./testfolder");
-	
-	end = chrono::system_clock::now();
-	
-	// Print block
-	
-	time_t startTime =
-		chrono::system_clock::to_time_t(start);
-	cout << " Program starts at "
-		<< ctime(&startTime) << '\n';
+	watch clock;
+	clock.startPoint();
 
-	time_t endTime =
-		chrono::system_clock::to_time_t(end);
-	cout << " Program ends at "
-		<< ctime(&endTime) << '\n';
+	if (argc <= 1)
+	{
+		cerr << "Please supply a folder path.\n";
+		return 1;
+	}
 
-	chrono::duration<double> totalTime =
-		end - start;
-	cout << "Total time passed "
-		<< totalTime.count() << '\n';
+	bool completed = false;
+	size_t bytes = 0;
+	thread byteCounter(countBytes,
+		std::ref(completed), std::ref(bytes), argv[1]);
+	thread progressBar(timeProcess,
+		std::ref(completed));
+
+	byteCounter.join();
+
+	clock.endPoint();
+
+	progressBar.join();
+
+	cout << bytes << " bytes\n";
+
+	clock.startShowTime();
+
+    clock.endShowTime();
+
+    clock.timePassed();
 }
