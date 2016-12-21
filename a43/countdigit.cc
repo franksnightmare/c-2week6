@@ -2,13 +2,12 @@
 
 void Task::countDigit()
 {
-    size_t ret = 0;
-    for_each(begin(), end(),
-        [&] (char c)
+    string digit = "digit";
+    int myCount = count_if(begin(), end(),
+        [&] (char character)
         {
-            if (string("1234567890").find(c) != string::npos)
-                ++ret;
+            return countChar(digit, character);
         }
     );
-    cout << "Digits: " << ret << "\n";
+    cout << "Digits: " << myCount << "\n";
 }

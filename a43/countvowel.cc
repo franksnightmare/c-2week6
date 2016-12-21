@@ -2,13 +2,12 @@
 
 void Task::countVowel()
 {
-    size_t ret = 0;
-    for_each(begin(), end(),
-        [&] (char c)
+    string vowel = "vowel";
+    int myCount = count_if(begin(), end(),
+        [&] (char character)
         {
-            if (string("aeiouAEIOU").find(c) != string::npos)
-                ++ret;
+            return countChar(vowel, character);
         }
     );
-    cout << "Vowels: " << ret << "\n";
+    cout << "Vowels: " << myCount << "\n";
 }

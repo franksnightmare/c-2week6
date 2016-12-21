@@ -2,13 +2,12 @@
 
 void Task::countPunctChar()
 {
-    size_t ret = 0;
-    for_each(begin(), end(),
-        [&] (char c)
+    string punctuation = "punctuation";
+    int myCount = count_if(begin(), end(),
+        [&] (char character)
         {
-            if (ispunct(c))
-                ++ret;
+            return countChar(punctuation, character);
         }
     );
-    cout << "Punctuation characters: " << ret << "\n";
+    cout << "Punctuation characters: " << myCount << "\n";
 }
